@@ -11,10 +11,8 @@ class Question:
         self.num2 = make_rand_num()
         self.ans = self.num1 * self.num2
 
-    def print_question(self):
-        print(str(self.num1) + " × " + str(self.num2) + " = ?")
-
     def check_the_answer(self):
+        print(str(self.num1) + " × " + str(self.num2) + " = ?")
         if int(input("answer = ")) == self.ans:
             return True
         else:
