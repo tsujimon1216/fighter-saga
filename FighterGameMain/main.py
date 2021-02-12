@@ -10,7 +10,10 @@ from calculator import *
 # monster2 = Monster(2, "monster2", 200, 60, 20)
 # monster3 = Monster(3, "monster3", 300, 90, 30)
 
-if check_the_answer():
+q = Question()
+
+q.print_question()
+if q.check_the_answer():
     print("collect")
 else:
     print("wrong")
