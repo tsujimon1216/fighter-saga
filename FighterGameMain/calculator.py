@@ -2,19 +2,19 @@ import random
 
 
 def make_rand_num():
-    return random.randint(1,9)
+    return random.randint(1, 9)
 
 
 def questions():
-    questions_answer = make_rand_num()*make_rand_num()
-    return questions_answer
+    num1 = make_rand_num()
+    num2 = make_rand_num()
+    return num1, num2, num1 * num2
 
 
 def check_the_answer():
-    input_answer = input('input_answer : ')
-    if questions() == int(input_answer):
+    question = questions()
+    print(str(question[0]) + " × " + str(question[1]) + " = ?")
+    if int(input("answer = ")) == question[2]:
         return True
     else:
         return False
-
-
