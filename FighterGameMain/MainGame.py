@@ -1,2 +1,3 @@
-import ShowGame
-ShowGame().StartScene()
+from ShowGame import *
+
+start_scene()
