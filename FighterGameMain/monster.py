@@ -25,8 +25,12 @@ class Monster:
     def change_life_point(self, dif):
         self.life_point += dif
 
-    def attack_to(self, the_other):
-        damage = the_other.defence_point - self.attack_point
-        the_other.change_life_point(damage)
-        print(self.get_name() + "の攻撃！" + the_other.get_name() + "に" + str(-damage) + "ダメージ！")
-        print(the_other.get_name() + "の体力は残り" + str(the_other.get_life_point()))
+    def attack_to(self, the_other, is_collect):
+        if is_collect:
+            damage = the_other.defence_point - self.attack_point
+            the_other.change_life_point(damage)
+            print(self.get_name() + "の攻撃！")
+            print(the_other.get_name() + "に" + str(-damage) + "ダメージ！")
+            print(the_other.get_name() + "の体力は残り" + str(the_other.get_life_point()))
+        else:
+            print(self.get_name() + "の攻撃ははずれた！")
