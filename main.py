@@ -4,7 +4,6 @@
 # from printer import *
 
 # start_scene()
-# print(select_play_level())
 
 # monster1 = Monster(1, "monster1", 100, 30, 10)
 # monster2 = Monster(2, "monster2", 200, 60, 20)
