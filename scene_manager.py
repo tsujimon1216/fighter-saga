@@ -20,7 +20,7 @@ def select_level_scene():
     select_level(level)
 
 
-ally = Ally("ally", 150, 50, 30)
+ally = Ally("ally", 150, 50, 20)
 enemy = Enemy("enemy", 100, 30, 10)
 
 
