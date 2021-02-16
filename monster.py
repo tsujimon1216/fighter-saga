@@ -38,12 +38,12 @@ class Enemy(Monster):
 class Ally(Monster):
 
     def attack_to_enemy(self, enemy, question):
-        if question.check_the_answer1():
+        if question.check_the_multiplication():
             if self.hp < self.max_hp * 0.3 and self.attack != self.origin_attack * 1.5:
                 self.attack = self.attack * 1.5
                 print("攻撃力が1.5倍になった。")
             elif self.hp > self.max_hp * 0.3 and self.attack == self.origin_attack * 1.5:
-                self.attack = self.attack * (2 / 3)
+                self.attack = self.origin_attack
                 print("攻撃力が元に戻った。")
 
             damage = enemy.defence - self.attack
@@ -61,7 +61,7 @@ class Ally(Monster):
                 print("時間オーバーです。\n")
 
     def hp_recovery(self, question):
-        if question.check_the_answer2():
+        if question.check_the_division():
             if self.hp > 100:
                 over_hp = 150 - self.hp
                 self.hp += over_hp

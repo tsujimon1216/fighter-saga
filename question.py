@@ -13,7 +13,7 @@ class Question:
         self.ans = self.num1 * self.num2
         self.elapsed_time = 0
 
-    def check_the_answer1(self):
+    def check_the_multiplication(self):
         self.elapsed_time = 0
         start = time.time()
         print("10秒以内に答えよ")
@@ -29,7 +29,7 @@ class Question:
     def get_elapsed_time(self):
         return self.elapsed_time
 
-    def check_the_answer2(self):
+    def check_the_division(self):
         self.elapsed_time = 0
         start = time.time()
         print("10秒以内に答えよ")
