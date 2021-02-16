@@ -6,3 +6,5 @@ def select_level(level):
             break
         else:
             print("Not Applicable")
+    return play_level
+
