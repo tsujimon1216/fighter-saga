@@ -13,10 +13,9 @@ def battle(ally, enemy, result):
             elif command.isdigit() and command == "2":
                 ally.hp_recovery(question)
                 break
+        print()
         if enemy.hp <= 0:
-            result[0] = ally
-            break
-        print("")
+            return ally
         enemy.attack_to_ally(ally)
         if ally.hp <= 0:
             result[0] = enemy
