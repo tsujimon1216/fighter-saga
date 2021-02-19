@@ -22,17 +22,24 @@ class Monster:
 class Enemy(Monster):
     def attack_to_ally(self, ally):
         attack_random = random.randint(1, 3)
-        if attack_random == 1 and 2:
+        if attack_random == 1 or attack_random == 2:
             damage = ally.defence - self.attack
             ally.change_hp(damage)
             print(self.name + "の攻撃！")
             print(ally.name + "に" + str(-damage) + "ダメージ！")
-            if ally.hp + damage <= 0:
+            if ally.hp <= 0:
                 print(ally.name + "の体力は残り0\n")
             else:
                 print(ally.name + "の体力は残り" + str(ally.hp) + "\n")
         elif attack_random == 3:
             print(self.name + "の攻撃ははずれた！\n")
+
+    def change_enemy_monster(self):
+        self.max_hp += 50
+        self.hp = self.max_hp
+        self.attack += 20
+        self.defence += 15
+        print("next_monster...")
 
 
 class Ally(Monster):
@@ -63,9 +70,7 @@ class Ally(Monster):
     def hp_recovery(self, question):
         if question.check_the_division():
             if self.hp > 100:
-                over_hp = 150 - self.hp
-                self.hp += over_hp
-                print(self.name + "は体力を" + str(over_hp) + "回復した")
+                self.hp = self.max_hp
                 print(self.name + "の体力は満タンになった!")
             else:
                 self.change_hp(50)
@@ -75,3 +80,15 @@ class Ally(Monster):
                 print("時間オーバーです。\n")
             else:
                 print(self.name + "は体力を回復できなかった\n")
+
+    def status_up(self):
+        self.attack += 10
+        self.origin_attack += 10
+        self.max_hp += 50
+        self.defence += 10
+        print("")
+        print(self.name + "のステータスが上がった")
+        print(self.name + "のMAX_HPは50上がった")
+        print(self.name + "の攻撃力は10上がった")
+        print(self.name + "の防御力は10上がった")
+        print("")

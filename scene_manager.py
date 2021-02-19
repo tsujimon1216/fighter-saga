@@ -34,3 +34,9 @@ def battle_scene():
 
 def result_scene():
     print("WINNER: " + result[0].name)
+    if result[0] == ally:
+        ally.status_up()
+        print("")
+        enemy.change_enemy_monster()
+    else:
+        print("GAME OVER")
